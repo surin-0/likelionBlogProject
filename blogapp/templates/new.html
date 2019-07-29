@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{%block contents%}
+<body>
+    <br><br>
+    <div class = "container">
+        <!-- <form action = "{% url 'create' %}">
+            <h4>제목 : </h4>
+            <input type="text" class="form-control" placeholder="Default input" id="inputDefault" name = "title">
+            <br>
+            <h5>본문 : </h5>
+            <textarea class="form-control" id="exampleTextarea" rows="3" name = "body"></textarea>
+            <br>
+            <input class = "btn btn-outline-success" type = "submit" value="등록!">
+        </form> -->
+        <form method="POST">
+            {%csrf_token%}
+            <table>
+                {{form.as_table}}
+            </table>
+            <br>
+            <input class="btn btn-dark" type = "submit" value="제출하기">
+        </form>
+    </div>
+</body>
+{%endblock%}
